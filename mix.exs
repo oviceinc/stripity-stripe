@@ -153,7 +153,8 @@ defmodule Stripe.Mixfile do
         Stripe.TaxRate
       ],
       "Billing Portal": [
-        Stripe.BillingPortal.Session
+        Stripe.BillingPortal.Session,
+        Stripe.BillingPortal.Configuration
       ],
       Connect: [
         Stripe.Account,

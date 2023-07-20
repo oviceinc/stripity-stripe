@@ -34,6 +34,10 @@ defmodule Stripe.Subscription do
           trial_from_plan: boolean
         }
 
+  @type payment_settings :: %{
+          payment_method_types: [String.t()]
+        }
+
   @type t :: %__MODULE__{
           id: Stripe.id(),
           object: String.t(),
@@ -69,6 +73,7 @@ defmodule Stripe.Subscription do
           plan: Stripe.Plan.t() | nil,
           pause_collection: pause_collection() | nil,
           promotion_code: pause_collection() | nil,
+          payment_settings: payment_settings(),
           quantity: integer | nil,
           schedule: String.t() | nil,
           start_date: Stripe.timestamp(),
@@ -112,6 +117,7 @@ defmodule Stripe.Subscription do
     :pending_update,
     :plan,
     :pause_collection,
+    :payment_settings,
     :promotion_code,
     :quantity,
     :schedule,

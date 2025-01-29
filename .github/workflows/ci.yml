@@ -59,7 +59,7 @@ jobs:
         with:
           otp-version: ${{matrix.otp}}
           elixir-version: ${{matrix.elixir}}
-      - uses: actions/cache@v1
+      - uses: actions/cache@v4
         env:
           cache-name: mix
         with:
@@ -67,7 +67,7 @@ jobs:
           key: cache-${{ runner.os }}-${{ env.cache-name }}-${{ matrix.otp }}-${{ matrix.elixir }}
           restore-keys: |
              cache-${{ runner.os }}-${{ env.cache-name }}-
-      - uses: actions/cache@v1
+      - uses: actions/cache@v4
         env:
           cache-name: build
         with:
